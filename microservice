@@ -1,0 +1,10 @@
+2019-07-25 09:20:38.540  INFO 9280 --- [restartedMain] com.minsait.h3.H3Application             : Starting H3Application on FJGCORNEJO10 with PID 9280 (D:\EBUSTOS\DEVELOP\INDRA\h3-rest\target\classes started by ebustos in D:\EBUSTOS\DEVELOP\INDRA\h3-rest)
+2019-07-25 09:20:38.544  INFO 9280 --- [restartedMain] com.minsait.h3.H3Application             : No active profile set, falling back to default profiles: default
+2019-07-25 09:20:38.608  INFO 9280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-25 09:20:39.378  INFO 9280 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-25 09:20:39.412  INFO 9280 --- [restartedMain] com.minsait.h3.H3Application             : Started H3Application in 2.012 seconds (JVM running for 2.957)
+2019-07-25 09:28:41.878  INFO 1336 --- [restartedMain] com.minsait.onesait.h3.H3Application     : Starting H3Application on FJGCORNEJO10 with PID 1336 (D:\EBUSTOS\DEVELOP\INDRA\h3-rest\target\classes started by ebustos in D:\EBUSTOS\DEVELOP\INDRA\h3-rest)
+2019-07-25 09:28:41.881  INFO 1336 --- [restartedMain] com.minsait.onesait.h3.H3Application     : No active profile set, falling back to default profiles: default
+2019-07-25 09:28:41.939  INFO 1336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-25 09:28:42.679  INFO 1336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-25 09:28:42.710  INFO 1336 --- [restartedMain] com.minsait.onesait.h3.H3Application     : Started H3Application in 1.497 seconds (JVM running for 2.201)
