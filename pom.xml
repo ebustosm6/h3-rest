@@ -8,7 +8,7 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.minsait</groupId>
+	<groupId>com.minsait.onesait</groupId>
 	<artifactId>h3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>h3</name>
