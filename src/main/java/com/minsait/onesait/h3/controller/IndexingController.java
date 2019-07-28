@@ -12,16 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.minsait.onesait.h3;
+package com.minsait.onesait.h3.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
 
-@SpringBootApplication
-public class H3Application {
+public interface IndexingController {
+	
+	ResponseEntity<?> geoToH3(double latitude, double longitude, int resolution);
+	
+	ResponseEntity<?> h3ToGeo(String h3Address);
+	
+	ResponseEntity<?> h3ToGeoBoundary(String h3Address);
 
-	public static void main(String[] args) {
-		SpringApplication.run(H3Application.class, args);
-	}
 
 }
