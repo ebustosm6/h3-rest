@@ -12,16 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.minsait.onesait.h3;
+package com.minsait.onesait.h3.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.IOException;
 
-@SpringBootApplication
-public class H3Application {
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import com.uber.h3core.H3Core;
 
-	public static void main(String[] args) {
-		SpringApplication.run(H3Application.class, args);
-	}
+@Configuration
+public class H3CoreInstace {
+	
+	
+	@Bean
+	public H3Core initializeH3CoreInstance() throws Exception {
+	  final H3Core h3 = H3Core.newInstance();
+	  return h3;
+	  }
 
 }
