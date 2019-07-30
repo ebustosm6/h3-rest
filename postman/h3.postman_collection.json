@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "ac706090-1540-4b96-acc1-b446f87cca65",
+		"name": "h3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "indexing",
+			"item": [
+				{
+					"name": "geoToH3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/indexing/geoToH3?latitude=40&longitude=30&resolution=-1",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"indexing",
+								"geoToH3"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "40"
+								},
+								{
+									"key": "longitude",
+									"value": "30"
+								},
+								{
+									"key": "resolution",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3ToGeo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/indexing/h3ToGeo?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"indexing",
+								"h3ToGeo"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3ToGeoBoundary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/indexing/h3ToGeoBoundary?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"indexing",
+								"h3ToGeoBoundary"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inspection",
+			"item": [
+				{
+					"name": "h3IsValid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/inspection/h3IsValid?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"inspection",
+								"h3IsValid"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3IsPentagon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/inspection/h3IsPentagon?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"inspection",
+								"h3IsPentagon"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3IsResClassIII",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/inspection/h3IsResClassIII?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"inspection",
+								"h3IsResClassIII"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3GetBaseCell",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/inspection/h3GetBaseCell?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"inspection",
+								"h3GetBaseCell"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "h3GetResolution",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:30010/h3/inspection/h3GetResolution?h3Address=802dfffffffffff",
+							"host": [
+								"localhost"
+							],
+							"port": "30010",
+							"path": [
+								"h3",
+								"inspection",
+								"h3GetResolution"
+							],
+							"query": [
+								{
+									"key": "h3Address",
+									"value": "802dfffffffffff"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
