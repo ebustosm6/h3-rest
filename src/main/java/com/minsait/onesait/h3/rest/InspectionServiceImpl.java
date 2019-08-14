@@ -5,10 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.uber.h3core.H3Core;
 
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class InspectionServiceImpl implements InspectionService {
 	
 	@Autowired

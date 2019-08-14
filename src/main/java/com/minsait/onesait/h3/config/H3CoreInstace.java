@@ -14,8 +14,6 @@
  */
 package com.minsait.onesait.h3.config;
 
-import java.io.IOException;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.uber.h3core.H3Core;
@@ -26,8 +24,7 @@ public class H3CoreInstace {
 	
 	@Bean
 	public H3Core initializeH3CoreInstance() throws Exception {
-	  final H3Core h3 = H3Core.newInstance();
-	  return h3;
+	  return H3Core.newInstance();
 	  }
 
 }

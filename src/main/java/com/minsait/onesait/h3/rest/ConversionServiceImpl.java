@@ -6,39 +6,38 @@ import org.springframework.stereotype.Service;
 
 import com.uber.h3core.util.GeoCoord;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
 public class ConversionServiceImpl implements ConversionService{
 
 	@Override
 	public String geoCoordsToWKT(List<GeoCoord> geoCoordsPolygon) {
-			String wktString = "POLYGON((";
+		StringBuilder wktString = new StringBuilder();
+		wktString.append("POLYGON((");
 			GeoCoord firstPoint = geoCoordsPolygon.get(0);
+			
 			for (GeoCoord c: geoCoordsPolygon) {
-				wktString += c.lat + " " + c.lng + ",";
+				wktString.append(c.lat + " " + c.lng + ",");
 			}
-			if (wktString.endsWith(","))
+			if (wktString.toString().endsWith(","))
 			{
-				wktString += firstPoint.lat + " " + firstPoint.lng;
+				wktString.append(firstPoint.lat + " " + firstPoint.lng);
 			}
-			wktString += "))";
-		return wktString;
+			wktString.append("))");
+		return wktString.toString();
 	}
 
 	@Override
 	public String geoCoordsToStringArray(List<GeoCoord> geoCoordsPolygon) {
-		String polygonString = "[";
+		StringBuilder polygonString = new StringBuilder();
+		polygonString.append("[");
 		for (GeoCoord c: geoCoordsPolygon) {
-			polygonString += "[" + c.lat + ", " + c.lng + "], ";
+			polygonString.append("[" + c.lat + ", " + c.lng + "], ");
 		}
-		if (polygonString.endsWith(", "))
-		{
-			polygonString = polygonString.substring(0, polygonString.length() -2);
+		if (polygonString.toString().endsWith(", ")) {
+			polygonString.delete(polygonString.length() -2, polygonString.length());
 		}
-		polygonString += "]";
-		return polygonString;
+		polygonString.append("]");
+		return polygonString.toString();
 	}
 
 }

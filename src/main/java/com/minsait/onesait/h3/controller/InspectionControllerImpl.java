@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.minsait.onesait.h3.rest.ConversionService;
 import com.minsait.onesait.h3.rest.InspectionService;
 
 import io.swagger.annotations.Api;
@@ -38,50 +37,50 @@ public class InspectionControllerImpl implements InspectionController {
 	@GetMapping("/h3IsValid")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Check if h3 address is valid")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3IsValid(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3IsValid(@RequestParam String h3Address) {
 		boolean isValid = inspectionService.h3IsValid(h3Address);
 		String jsonString = String.format(RES_H3ISVALID, h3Address, isValid);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 	
 	@Override
 	@GetMapping("/h3GetResolution")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Check resolution of h3 address")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3GetResolution(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3GetResolution(@RequestParam String h3Address) {
 		int resolution = inspectionService.h3GetResolution(h3Address);
 		String jsonString = String.format(RES_H3RESOLUTION, h3Address, resolution);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 	@Override
 	@GetMapping("/h3GetBaseCell")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Get base cell of h3 address")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3GetBaseCell(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3GetBaseCell(@RequestParam String h3Address) {
 		int baseCell = inspectionService.h3GetBaseCell(h3Address); 
 		String jsonString = String.format(RES_H3GETBASE, h3Address, baseCell);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 	@Override
 	@GetMapping("/h3IsResClassIII")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Check if h3 is Res Class III")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3IsResClassIII(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3IsResClassIII(@RequestParam String h3Address) {
 		boolean isResIII = inspectionService.h3IsResClassIII(h3Address); 
 		String jsonString = String.format(RES_H3ISRESIII, h3Address, isResIII);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 	@Override
 	@GetMapping("/h3IsPentagon")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Check if h3 is pentagon")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3IsPentagon(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3IsPentagon(@RequestParam String h3Address) {
 		boolean isPentagon = inspectionService.h3IsPentagon(h3Address); 
 		String jsonString = String.format(RES_H3ISPENTAGON, h3Address, isPentagon);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 }
