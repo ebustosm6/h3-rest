@@ -5,6 +5,7 @@ import com.uber.h3core.util.GeoCoord;
 public interface ConversionService {
 	
 	String geoCoordsToWKT(List<GeoCoord> geoCoordsPolygon);
+	
 	String geoCoordsToStringArray(List<GeoCoord> geoCoordsPolygon);
 
 }

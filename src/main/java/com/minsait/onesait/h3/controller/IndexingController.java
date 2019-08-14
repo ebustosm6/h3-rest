@@ -18,11 +18,11 @@ import org.springframework.http.ResponseEntity;
 
 public interface IndexingController {
 	
-	ResponseEntity<?> geoToH3(double latitude, double longitude, int resolution);
+	ResponseEntity<String> geoToH3(double latitude, double longitude, int resolution);
 	
-	ResponseEntity<?> h3ToGeo(String h3Address);
+	ResponseEntity<String> h3ToGeo(String h3Address);
 	
-	ResponseEntity<?> h3ToGeoBoundary(String h3Address);
+	ResponseEntity<String> h3ToGeoBoundary(String h3Address);
 
 
 }

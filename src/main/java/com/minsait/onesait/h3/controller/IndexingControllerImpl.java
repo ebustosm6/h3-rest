@@ -20,7 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,32 +56,32 @@ public class IndexingControllerImpl implements IndexingController {
 	@GetMapping("/geoToH3")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Converts geo coordinates to h3 address")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> geoToH3(@RequestParam double latitude, @RequestParam double longitude, @RequestParam int resolution) {
+	public ResponseEntity<String> geoToH3(@RequestParam double latitude, @RequestParam double longitude, @RequestParam int resolution) {
 		String res = indexingService.geoToH3(latitude, longitude, resolution);
 		String jsonString = String.format(RES_GEO2H3, res);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 	@Override
 	@GetMapping("/h3ToGeo")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Converts h3 address to centroid geo coordinates")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3ToGeo(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3ToGeo(@RequestParam String h3Address) {
 		GeoCoord geoCoords = indexingService.h3ToGeo(h3Address);
 		String jsonString = String.format(RES_H32GEO, geoCoords.lat, geoCoords.lng);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 	}
 
 	@Override
 	@GetMapping("/h3ToGeoBoundary")
 	@ApiOperation(response = String.class, httpMethod = HTTP_GET, value = "Return geo boundary of h3 address")
 	@ApiResponse(code = 429, message = "Too Many Requests")
-	public ResponseEntity<?> h3ToGeoBoundary(@RequestParam String h3Address) {
+	public ResponseEntity<String> h3ToGeoBoundary(@RequestParam String h3Address) {
 		List<GeoCoord> geoBoundary = indexingService.h3ToGeoBoundary(h3Address);
 		String stringPolygon = conversionService.geoCoordsToStringArray(geoBoundary);
 		String stringWKT = conversionService.geoCoordsToWKT(geoBoundary);
 		String jsonString = String.format(RES_H32GEOBOUNDARY, stringPolygon, stringWKT);
-		return new ResponseEntity<String>(jsonString, HttpStatus.OK);
+		return new ResponseEntity<>(jsonString, HttpStatus.OK);
 		
 	}
 

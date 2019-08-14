@@ -9,10 +9,9 @@ import com.uber.h3core.H3Core;
 import com.uber.h3core.exceptions.DistanceUndefinedException;
 import com.uber.h3core.exceptions.LineUndefinedException;
 import com.uber.h3core.exceptions.PentagonEncounteredException;
-import lombok.extern.slf4j.Slf4j;
+
 
 @Service
-@Slf4j
 public class TraversalServiceImpl implements TraversalService {
 
 	@Autowired

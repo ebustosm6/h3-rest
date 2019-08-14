@@ -22,10 +22,8 @@ import org.springframework.stereotype.Service;
 import com.uber.h3core.H3Core;
 import com.uber.h3core.util.GeoCoord;
 
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class IndexingServiceImpl implements IndexingService {
 	
 	@Autowired
@@ -40,20 +38,17 @@ public class IndexingServiceImpl implements IndexingService {
 			resolution = 15;
 		}
 		
-		String res = h3.geoToH3Address(latitude, longitude, resolution);
-		return res;
+		return h3.geoToH3Address(latitude, longitude, resolution);
 	}
 
 	@Override
 	public GeoCoord h3ToGeo(String h3Address) {
-		GeoCoord geoCoords = h3.h3ToGeo(h3Address);
-		return geoCoords;
+		return h3.h3ToGeo(h3Address);
 	}
 
 	@Override
 	public List<GeoCoord> h3ToGeoBoundary(String h3Address) {
-		List<GeoCoord> geoBoundary = h3.h3ToGeoBoundary(h3Address);
-		return geoBoundary;
+		return h3.h3ToGeoBoundary(h3Address);
 	}
 
 
