@@ -2,6 +2,7 @@
 En este repositorio se desarrolla el proyecto de H3-REST.
 El servicio REST se basa en la idea de disponer como API REST con docker las funcionalidades del proyecto de [Uber H3](https://uber.github.io/h3/#/).
 
+
 ## Idea
 La idea es implementar las funcionalidades de la librería H3 de C, mediante el wrapper de java. Para ello se utiliza el framework de desarrollo web Springboot.
 
